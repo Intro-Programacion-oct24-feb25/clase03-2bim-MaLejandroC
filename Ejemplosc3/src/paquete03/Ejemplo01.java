@@ -17,17 +17,17 @@ public class Ejemplo01 {
                             {7, 9.4, 10, 9}};
         String[] nombresEstudiante = {"Jose A", "Elena J", "Paúl L"};
         double[] sumaNotas = new double[3];
-        double[] sumaNotasCualitativas = new double[3];
+        String[] promedioNotasCualitativas = new String[3];
         // 0 - 5.9 Bueno
         // 6 - 8.9 Muy Bueno
         // 9 - 10 Sobresaliente
-                    
+        int j = 0;
         double suma;
         String reporte = "";
         
         for (int i = 0; i < notas.length; i++) { // 0<3
             suma = 0; // 0
-            for (int j = 0; j < notas[i].length; j++) { // 0<notas[0].length
+            for ( j = 0; j < notas[i].length; j++) { // 0<notas[0].length
                                                         // 0<4 // 1<4 // 2<4 // 3<4 // 4<4
                 suma = suma + notas[i][j];
                      // 0 + notas[0][0] // 0 + 9 // 9
@@ -35,15 +35,29 @@ public class Ejemplo01 {
                      // 19 + notas[0][2] // 19 + 7 // 26
                      // 26 + notas[0][3] // 26 + 8 // 34
             }
+            double promedio = suma / (double)j;
+            if (promedio >= 0 && promedio <=5.9){
+                promedioNotasCualitativas[i] = "Bueno";
+            } else { 
+                if (promedio >= 6 && promedio <=8.9) {
+                    promedioNotasCualitativas[i] = "Muy bueno";
+                } else {
+                    if (promedio >= 9 && promedio <=10) {
+                        promedioNotasCualitativas[i] = "Sobresaliente";
+                    }
+                }
+            }
             sumaNotas[i] = suma; // 
+            
         }
         // Presentación de resultados
         for (int i = 0; i < nombresEstudiante.length; i++) {
             reporte = String.format("%sEstudiante %s tiene una sumataria "
-                    + "de notas: %.3f\n",
+                    + "de notas: %.3f y su promedio cualitativo es: %s\n",
                     reporte,
                     nombresEstudiante[i],
-                    sumaNotas[i]);
+                    sumaNotas[i],
+                    promedioNotasCualitativas[i]);
         }
         
         System.out.printf("%s\n", reporte);
