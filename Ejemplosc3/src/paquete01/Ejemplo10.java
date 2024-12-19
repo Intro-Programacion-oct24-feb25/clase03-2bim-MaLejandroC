@@ -26,13 +26,13 @@ public class Ejemplo10 {
         -10      41      40
         1       -2       -3
         6       8       -9
-        */
+         */
         int sumaPositivos = 0;
         int sumaNegativos = 0;
         int valor;
-        
+
         System.out.println("Ingreso de datos al arreglo");
-        
+
         for (int i = 0; i < arreglo1.length; i++) {
             for (int j = 0; j < arreglo1[i].length; j++) {
                 System.out.printf("Ingrese valor para la posición [%d][%d]\t:",
@@ -42,25 +42,23 @@ public class Ejemplo10 {
             }
             System.out.println(); // salto de línea
         }
-        
-        
-        
+
         for (int fila = 0; fila < arreglo1.length; fila++) {
             for (int col = 0; col < arreglo1[fila].length; col++) {
                 valor = arreglo1[fila][col];
-                
-                if(valor>0){
+
+                if (valor > 0) {
                     sumaPositivos = sumaPositivos + valor;
-                }else{
-                    if(valor<0){
+                } else {
+                    if (valor < 0) {
                         sumaNegativos = sumaNegativos + valor;
                     }
                 }
-                
+
             }
         }
         System.out.printf("Suma de valores de positivos: %d\n", sumaPositivos);
         System.out.printf("Suma de valores de negativos: %d\n", sumaNegativos);
     }
-    
+
 }

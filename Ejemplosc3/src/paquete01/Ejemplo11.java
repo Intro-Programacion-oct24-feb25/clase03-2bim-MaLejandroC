@@ -32,7 +32,9 @@ public class Ejemplo11 {
         4    6
         30   52
         */
-        
+        //se utulizan 3 arreglos para ir sumando cada posicion de los dos 
+        //arreglos (arreglo1 y arreglo2) y rescatarlos en una posicion del suma
+        //arreglo.
         int valor1;
         int valor2;
         
